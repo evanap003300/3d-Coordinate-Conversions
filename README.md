@@ -8,7 +8,7 @@ These scripts processes drone video footage from two fisheye cameras. It extract
 
 - `frame_sampler.py` — Extracts 100 evenly spaced frames from a video and applies fisheye correction.
 - `labeling.py` — Tool for manually labeling drone positions in images.
-- `convert.py` — Converts labeled 2D coordinates into 3D space using calibration, rotation, and transformation logic.
+- `convert.py` — Attempts to convert labeled 2D coordinates into 3D space using calibration, rotation, and transformation logic.
 
 ---
 
