@@ -7,6 +7,8 @@
 # Camera Angle: 20 degrees 
 
 # Image Dimentions: Width: 2160, Height: 2160
+
+# NOTE: the conversions applied here don't result in the correct output, so I applied translations to achieve closer results instead for now.
  
 import numpy as np
 import pandas as pd
