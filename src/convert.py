@@ -49,21 +49,22 @@ def fix_x_error(x):
     x_new = x - 254.0 
     return x_new
 
-# Pass in average of y data 
+# Correction for vertical offset (OptiTrack origin is 1473.20 mm off the ground and the fisheye cameras are 142.24 mm + 127.0 mm off the ground)
 def fix_y_error(y):
     y_new = y + 1473.20 - 142.24 - 127.0
     return y_new
 
-# Pass in z
+# Nothing for now
 def fix_z_error(z):
     return z
 
-# Assumes DPI is 96 
+# Converts pixle coordinates to mm through using DPI conversion 
 def convert_pixles_to_mm(x, y):
     new_x = x * (25.4/96)
     new_y = y * (25.4/96)
     return new_x, new_y
-    
+
+# Adds data to array for pandas excel output
 def add_data(x, y, z):
     data_rows.append({
         "x": x,
@@ -72,7 +73,7 @@ def add_data(x, y, z):
     })
 
 
-# Read in all the data from an excel file and then output the converted coordinates to a new excel file
+# Exports the data to a excel file
 def export_data():
     if not data_rows:
         print("No data to export")
@@ -125,7 +126,7 @@ def main():
         x_t, y_t, z_t = transform_coordinates(
             x_arr, y_arr, z_arr,
             rotation_deg=(0, 20, 0),  # rotate up by 20°
-            translation=[4000, -500, -700]  # scale for closer fit based on distances away from camera and a factor for z
+            translation=[4000, -500, -700]  # scale for closer fit based on distances away from camera
         )
 
         # Final 3D point in OptiTrack frame
