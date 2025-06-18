@@ -53,7 +53,7 @@ This script:
 	•	Reads in hand-labeled normalized coordinates from Excel.
 	•	Converts coordinates from pixels to millimeters using DPI.
 	•	Applies calibration corrections and transforms the data into 3D.
-	•	Saves output as xyz_data.xlsx.
+	•	Saves output as OptiTrack.xlsx.
 
 **To Run:**
 ```bash
